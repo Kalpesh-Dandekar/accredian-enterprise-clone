@@ -1,26 +1,112 @@
 @import "tailwindcss";
 
+/* =========================================
+   ROOT VARIABLES
+========================================= */
+
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #1f2937;
+
+  /* Brand Colors */
+  --primary: #2563eb;
+  --primary-dark: #1d4ed8;
+  --secondary: #eff6ff;
+
+  /* Neutral Colors */
+  --text-primary: #111827;
+  --text-secondary: #6b7280;
+
+  --border: #e5e7eb;
+  --card: #ffffff;
+
+  /* Radius */
+  --radius: 1rem;
+
+  /* Container */
+  --container-width: 1280px;
 }
+
+/* =========================================
+   TAILWIND THEME
+========================================= */
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* =========================================
+   GLOBAL RESET
+========================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text-primary);
+  font-family: var(--font-geist-sans), sans-serif;
+  overflow-x: hidden;
+}
+
+/* =========================================
+   ELEMENTS
+========================================= */
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  font: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+::selection {
+  background: #2563eb;
+  color: #ffffff;
+}
+
+/* =========================================
+   REUSABLE UTILITIES
+========================================= */
+
+.container-custom {
+  width: 100%;
+  max-width: var(--container-width);
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+.section-padding {
+  padding-block: 5rem;
+}
+
+@media (max-width: 768px) {
+  .section-padding {
+    padding-block: 3.5rem;
+  }
+
+  .container-custom {
+    padding-inline: 1rem;
+  }
 }
