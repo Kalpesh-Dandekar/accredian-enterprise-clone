@@ -1,124 +1,356 @@
 import {
+
   ArrowRight,
+
   GraduationCap,
+
   BadgeCheck,
+
   BarChart3,
+
   Users,
+
   Sparkles,
+
 } from "lucide-react";
 
+import Button from "../common/Button";
+
+
+
 const features = [
+
   {
+
     title: "Personalized Learning Paths",
+
     description:
-      "Customized learning experiences aligned with individual roles, skill levels, and organizational objectives.",
+
+      "Customized learning journeys aligned with employee roles, skill levels, and business objectives.",
+
     icon: GraduationCap,
+
   },
+
   {
+
     title: "Industry Certifications",
+
     description:
-      "Gain globally recognized certifications that strengthen professional credibility and business value.",
+
+      "Earn globally recognized certifications that validate expertise and accelerate career growth.",
+
     icon: BadgeCheck,
+
   },
+
   {
+
     title: "Learning Analytics",
+
     description:
-      "Track engagement, performance, and learning outcomes with real-time enterprise dashboards.",
+
+      "Track learning engagement, completion rates, and workforce performance with real-time insights.",
+
     icon: BarChart3,
+
   },
+
   {
+
     title: "Expert Coaching",
+
     description:
-      "Receive continuous guidance from experienced mentors through interactive sessions.",
+
+      "Receive mentorship from experienced professionals through interactive workshops and live sessions.",
+
     icon: Users,
+
   },
+
 ];
 
+
+
+const stats = [
+
+  {
+
+    value: "500K+",
+
+    label: "Professionals Upskilled",
+
+  },
+
+  {
+
+    value: "98%",
+
+    label: "Completion Rate",
+
+  },
+
+  {
+
+    value: "250+",
+
+    label: "Enterprise Partners",
+
+  },
+
+];
+
+
+
 export default function SkillEnhancement() {
+
   return (
-    <section className="section-md bg-gradient-to-b from-white via-slate-50 to-white">
+
+    <section
+
+      id="skill-enhancement"
+
+      className="section-md bg-white"
+
+      aria-labelledby="skill-enhancement-heading"
+
+    >
+
       <div className="container-custom">
-        <div className="grid items-center gap-16 lg:grid-cols-2">
-          {/* Left Content */}
-          <div>
-            <div className="inline-flex items-center gap-2 rounded-full bg-blue-100 px-4 py-2 text-sm font-semibold text-blue-700">
-              <Sparkles size={16} />
-              Skill Enhancement
-            </div>
 
-            <h2 className="mt-6 text-4xl font-bold leading-tight text-slate-900 md:text-5xl">
-              Empower Teams With
-              <span className="block text-blue-600">
-                Future-Ready Skills
-              </span>
-            </h2>
+        {/* Heading */}
 
-            <p className="mt-6 text-lg leading-8 text-slate-600">
-              Accelerate workforce capability through practical learning,
-              industry expertise, certifications, and measurable skill
-              development designed for modern enterprises.
-            </p>
 
-            {/* Stats */}
-            <div className="mt-10 grid grid-cols-3 gap-5">
-              <div>
-                <h3 className="text-3xl font-bold text-blue-600">500K+</h3>
-                <p className="mt-2 text-sm text-slate-600">
-                  Learners Upskilled
-                </p>
-              </div>
 
-              <div>
-                <h3 className="text-3xl font-bold text-blue-600">98%</h3>
-                <p className="mt-2 text-sm text-slate-600">
-                  Completion Rate
-                </p>
-              </div>
+        <div className="flex flex-col items-center text-center">
 
-              <div>
-                <h3 className="text-3xl font-bold text-blue-600">250+</h3>
-                <p className="mt-2 text-sm text-slate-600">
-                  Enterprise Clients
-                </p>
-              </div>
-            </div>
+          <span className="inline-flex items-center gap-2 rounded-full bg-blue-50 px-4 py-2 text-sm font-semibold text-blue-600">
 
-            <button className="group mt-10 inline-flex items-center gap-3 rounded-xl bg-blue-600 px-8 py-4 font-semibold text-white transition hover:bg-blue-700">
-              Explore Learning
-              <ArrowRight
-                size={18}
-                className="transition group-hover:translate-x-1"
-              />
-            </button>
-          </div>
+            <Sparkles size={16} />
 
-          {/* Right Cards */}
-          <div className="grid gap-6 sm:grid-cols-2">
-            {features.map((feature) => {
-              const Icon = feature.icon;
+            Skill Enhancement
 
-              return (
-                <div
-                  key={feature.title}
-                  className="group rounded-3xl border border-slate-200 bg-white p-7 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-blue-200 hover:shadow-xl"
-                >
-                  <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-blue-50 text-blue-600 transition group-hover:bg-blue-600 group-hover:text-white">
-                    <Icon size={30} />
-                  </div>
+          </span>
 
-                  <h3 className="mt-6 text-xl font-bold text-slate-900">
-                    {feature.title}
-                  </h3>
 
-                  <p className="mt-4 leading-7 text-slate-600">
-                    {feature.description}
-                  </p>
-                </div>
-              );
-            })}
-          </div>
+
+          <h2
+
+            id="skill-enhancement-heading"
+
+            className="mt-5 text-4xl font-extrabold tracking-tight text-slate-900 md:text-5xl"
+
+          >
+
+            Build a Workforce Ready for{" "}
+
+            <span className="text-blue-600">Tomorrow</span>
+
+          </h2>
+
+
+
+          <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-600">
+
+            Empower your workforce with practical learning experiences,
+
+            measurable business outcomes, and industry-leading mentorship
+
+            designed to accelerate enterprise growth.
+
+          </p>
+
         </div>
+
+
+
+        {/* Stats */}
+
+
+
+        <div className="mt-16 flex flex-wrap items-center justify-center gap-10 lg:gap-20">
+
+          {stats.map((stat) => (
+
+            <div
+
+              key={stat.value}
+
+              className="text-center"
+
+            >
+
+              <h3 className="text-5xl font-extrabold text-slate-900">
+
+                {stat.value}
+
+              </h3>
+
+
+
+              <div className="mx-auto mt-4 h-1 w-10 rounded-full bg-blue-600" />
+
+
+
+              <p className="mt-4 text-base text-slate-500">
+
+                {stat.label}
+
+              </p>
+
+            </div>
+
+          ))}
+
+        </div>
+
+
+
+        {/* CTA */}
+
+
+
+        <div className="mt-12 flex justify-center">
+
+          <Button className="group px-8 py-4">
+
+            Explore Learning
+
+
+
+            <ArrowRight
+
+              size={18}
+
+              className="ml-2 transition-transform duration-300 group-hover:translate-x-1"
+
+            />
+
+          </Button>
+
+        </div>
+
+
+
+        {/* Feature Cards */}
+
+
+
+        <div className="mt-20 grid gap-8 md:grid-cols-2 xl:grid-cols-4">
+
+          {features.map((feature) => {
+
+            const Icon = feature.icon;
+
+
+
+            return (
+
+              <article
+
+                key={feature.title}
+
+                className="group flex h-full flex-col rounded-3xl border border-slate-200 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-blue-200 hover:shadow-[0_20px_50px_rgba(37,99,235,.12)]"
+
+              >
+
+                {/* Icon */}
+
+
+
+                <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-blue-50 text-blue-600 transition-all duration-300 group-hover:bg-blue-600 group-hover:text-white">
+
+                  <Icon size={30} />
+
+                </div>
+
+
+
+                {/* Accent */}
+
+
+
+                <div className="mt-6 h-1 w-12 rounded-full bg-gradient-to-r from-blue-600 to-cyan-500 transition-all duration-300 group-hover:w-20" />
+
+
+
+                {/* Title */}
+
+
+
+                <h3 className="mt-6 text-2xl font-bold text-slate-900">
+
+                  {feature.title}
+
+                </h3>
+
+
+
+                {/* Description */}
+
+
+
+                <p className="mt-4 flex-1 leading-8 text-slate-600">
+
+                  {feature.description}
+
+                </p>
+
+
+
+                {/* Footer */}
+
+
+
+                <div className="mt-8 flex items-center justify-between border-t border-slate-100 pt-6">
+
+                  <span className="text-sm font-medium text-slate-500">
+
+                    Enterprise Learning
+
+                  </span>
+
+
+
+                  <span className="flex items-center gap-2 text-sm font-semibold text-blue-600 transition-all duration-300 group-hover:gap-3">
+
+                    Learn More
+
+
+
+                    <ArrowRight size={16} />
+
+                  </span>
+
+                </div>
+
+              </article>
+
+            );
+
+          })}
+
+        </div>
+
       </div>
+
+
+
+      {/* Bottom Divider */}
+
+
+
+      <div className="mt-24 flex justify-center">
+
+        <div className="h-px w-40 rounded-full bg-gradient-to-r from-transparent via-blue-300 to-transparent" />
+
+      </div>
+
     </section>
+
   );
+
 }
+
+
+

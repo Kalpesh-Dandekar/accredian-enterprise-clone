@@ -92,20 +92,20 @@ img {
 ========================================= */
 
 .section-lg {
-  padding-block: 8rem;
+  padding-block: 7rem;
 }
 
 .section-md {
-  padding-block: 6.5rem;
+  padding-block: 5rem;
 }
 
 .section-sm {
-  padding-block: 4.5rem;
+  padding-block: 3.5rem;
 }
 
 /* Backward compatibility */
 .section-padding {
-  padding-block: 6.5rem;
+  padding-block: 5rem;
 }
 
 /* =========================================
@@ -163,12 +163,16 @@ img {
 
 .gradient-section {
   background:
-    radial-gradient(circle at top right,
+    radial-gradient(
+      circle at top right,
       rgba(37, 99, 235, 0.08),
-      transparent 35%),
-    radial-gradient(circle at bottom left,
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at bottom left,
       rgba(79, 70, 229, 0.08),
-      transparent 35%),
+      transparent 35%
+    ),
     #fff;
 }
 
@@ -178,19 +182,19 @@ img {
 
 @media (max-width: 1024px) {
   .section-lg {
-    padding-block: 6rem;
+    padding-block: 5.5rem;
   }
 
   .section-md {
-    padding-block: 5rem;
+    padding-block: 4.5rem;
   }
 
   .section-sm {
-    padding-block: 4rem;
+    padding-block: 3rem;
   }
 
   .section-padding {
-    padding-block: 5rem;
+    padding-block: 4.5rem;
   }
 }
 
@@ -200,19 +204,19 @@ img {
   }
 
   .section-lg {
-    padding-block: 5rem;
+    padding-block: 4.5rem;
   }
 
   .section-md {
-    padding-block: 4rem;
+    padding-block: 3.5rem;
   }
 
   .section-sm {
-    padding-block: 3rem;
+    padding-block: 2.5rem;
   }
 
   .section-padding {
-    padding-block: 4rem;
+    padding-block: 3.5rem;
   }
 
   .section-title {
