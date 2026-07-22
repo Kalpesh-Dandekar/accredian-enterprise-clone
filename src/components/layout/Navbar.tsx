@@ -41,6 +41,7 @@ export default function Navbar() {
     >
       <div className="container-custom">
         <div className="flex h-[84px] items-center justify-between">
+
           {/* Logo */}
           <a
             href="/"
@@ -57,6 +58,7 @@ export default function Navbar() {
             />
           </a>
 
+
           {/* Desktop Navigation */}
           <nav
             aria-label="Primary Navigation"
@@ -65,10 +67,16 @@ export default function Navbar() {
             <NavLinks />
           </nav>
 
+
           {/* Desktop CTA */}
           <div className="hidden w-56 justify-end lg:flex">
-            <Button className="px-7 py-3">Book Demo</Button>
+            <Button className="px-7 py-3">
+              <span data-demo-button>
+                Book Demo
+              </span>
+            </Button>
           </div>
+
 
           {/* Mobile Toggle */}
           <button
@@ -103,6 +111,7 @@ export default function Navbar() {
           </button>
         </div>
 
+
         {/* Mobile Navigation */}
         <div
           id="mobile-navigation"
@@ -115,6 +124,7 @@ export default function Navbar() {
             className="mt-2 rounded-2xl border border-slate-200 bg-white p-5 shadow-lg"
           >
             <div className="flex flex-col gap-5">
+
               <a
                 href="#programs"
                 onClick={closeMenu}
@@ -155,12 +165,21 @@ export default function Navbar() {
                 FAQs
               </a>
 
-              <Button className="mt-2 w-full" onClick={closeMenu}>
-                Book Demo
+
+              {/* Mobile CTA */}
+              <Button
+                className="mt-2 w-full"
+                onClick={closeMenu}
+              >
+                <span data-demo-button>
+                  Book Demo
+                </span>
               </Button>
+
             </div>
           </nav>
         </div>
+
       </div>
     </header>
   );

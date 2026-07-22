@@ -25,8 +25,8 @@ export default function Hero() {
       </div>
 
       <div className="container-custom">
-        {/* Hero Card */}
         <div className="relative overflow-hidden rounded-[38px] border border-blue-100 bg-[#eef5ff] shadow-[0_25px_80px_rgba(37,99,235,0.08)]">
+
           {/* Decorative */}
           <div
             aria-hidden="true"
@@ -39,8 +39,10 @@ export default function Hero() {
           />
 
           <div className="grid items-center gap-14 px-6 py-10 sm:px-8 md:px-10 lg:grid-cols-[1.05fr_0.95fr] lg:px-16 lg:pt-16 lg:pb-24">
+
             {/* LEFT */}
             <header className="relative z-10">
+
               <div className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-white px-4 py-2 shadow-sm">
                 <span className="text-sm font-semibold text-blue-700">
                   🚀 Trusted by 500+ Enterprise Clients
@@ -65,10 +67,14 @@ export default function Hero() {
                 outcomes designed specifically for modern enterprises.
               </p>
 
+
               {/* Features */}
               <div className="mt-8 space-y-4">
                 {features.map((feature) => (
-                  <div key={feature} className="flex items-center gap-3">
+                  <div
+                    key={feature}
+                    className="flex items-center gap-3"
+                  >
                     <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-green-100">
                       <CheckCircle2
                         size={18}
@@ -84,28 +90,39 @@ export default function Hero() {
                 ))}
               </div>
 
+
               {/* CTA */}
               <div className="mt-10 flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:gap-5">
+
                 <Button
                   className="px-8 py-3.5"
                   aria-label="Book a free enterprise learning demo"
                 >
-                  Book a Demo
+                  <span data-demo-button>
+                    Book a Demo
+                  </span>
                 </Button>
 
                 <p className="text-sm text-slate-500">
                   No commitment • Free consultation
                 </p>
+
               </div>
+
             </header>
+
 
             {/* RIGHT */}
             <div className="relative flex justify-center lg:justify-end">
+
+              {/* Glow */}
               <div
                 aria-hidden="true"
                 className="absolute bottom-8 h-[420px] w-[420px] rounded-full bg-blue-300/20 blur-[90px]"
               />
 
+
+              {/* Dotted Background */}
               <div
                 aria-hidden="true"
                 className="absolute right-12 top-8 hidden h-[320px] w-[320px] opacity-40 lg:block"
@@ -116,7 +133,9 @@ export default function Hero() {
                 }}
               />
 
+
               <article className="relative transition-transform duration-500 hover:-translate-y-2">
+
                 {/* Progress Card */}
                 <div className="absolute -left-10 top-8 z-20 hidden rounded-2xl bg-white px-5 py-4 shadow-xl lg:block">
                   <p className="text-xs font-medium text-slate-500">
@@ -127,6 +146,7 @@ export default function Hero() {
                     92%
                   </h2>
                 </div>
+
 
                 {/* Growth Card */}
                 <div className="absolute -right-6 bottom-10 z-20 hidden rounded-2xl bg-white px-5 py-4 shadow-xl lg:block">
@@ -139,6 +159,7 @@ export default function Hero() {
                   </h2>
                 </div>
 
+
                 <Image
                   src="/hero-illustration.png"
                   alt="Illustration representing enterprise workforce learning and professional upskilling"
@@ -148,11 +169,15 @@ export default function Hero() {
                   sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 620px"
                   className="relative z-10 w-full max-w-[620px] object-contain transition-transform duration-500 hover:scale-[1.02]"
                 />
+
               </article>
+
             </div>
+
           </div>
         </div>
       </div>
+
     </section>
   );
 }
