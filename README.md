@@ -1,36 +1,151 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Accredian Enterprise Clone
 
-## Getting Started
+A modern enterprise learning platform landing page inspired by Accredian Enterprise, built using **Next.js, TypeScript, and Tailwind CSS**.
 
-First, run the development server:
+The project focuses on creating a premium, responsive enterprise website experience with a functional demo request workflow.
+
+---
+
+## 🚀 Live Demo
+
+https://accredian-enterprise-clone-git-main-kalpesh-dandekars-projects.vercel.app/
+
+## 📂 Repository
+
+https://github.com/Kalpesh-Dandekar/accredian-enterprise-clone
+
+---
+
+# ✨ Features
+
+- Responsive enterprise landing page
+- Modern SaaS-style UI design
+- Sticky navigation with smooth scrolling
+- Hero section with CTA
+- Statistics showcase
+- Trusted companies section
+- Programs and domain sections
+- C.A.T Enterprise Learning Framework
+- Testimonials section
+- FAQ section
+- Responsive mobile layout
+- Functional Book Demo form
+
+---
+
+# 🛠 Tech Stack
+
+## Frontend
+
+- Next.js 16
+- React
+- TypeScript
+- Tailwind CSS
+- Lucide React Icons
+
+## Backend
+
+- Next.js API Routes
+
+## Deployment
+
+- Vercel
+
+---
+
+# 📩 Demo Request Integration
+
+A functional demo request workflow is implemented using Next.js API routes.
+
+### Flow
+
+```
+User clicks Book Demo
+        ↓
+Demo form opens
+        ↓
+User enters details
+        ↓
+Request sent to API
+        ↓
+Success response displayed
+```
+
+API Endpoint:
+
+```
+POST /api/demo
+```
+
+Example Request:
+
+```json
+{
+  "name": "John Doe",
+  "email": "john@example.com",
+  "company": "Example Company",
+  "message": "Interested in enterprise learning solutions"
+}
+```
+
+---
+
+# ⚙️ Installation & Setup
+
+Clone repository:
+
+```bash
+git clone https://github.com/Kalpesh-Dandekar/accredian-enterprise-clone.git
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+# 🚀 Deployment
 
-To learn more about Next.js, take a look at the following resources:
+The project is deployed using Vercel.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Production build verified successfully:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+npm run build
+```
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+# 🤖 AI Tools Usage
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+AI tools were used during development for:
+
+- UI/UX improvement suggestions
+- Debugging assistance
+- Code refinement
+- Documentation improvements
+
+All final implementation decisions and code changes were reviewed and customized during development.
+
+---
+
+# 👨‍💻 Author
+
+**Kalpesh Dandekar**
+
+GitHub:
+https://github.com/Kalpesh-Dandekar
