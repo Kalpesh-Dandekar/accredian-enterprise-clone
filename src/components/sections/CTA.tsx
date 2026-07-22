@@ -1,59 +1,49 @@
+import Image from "next/image";
 import Button from "../common/Button";
 
 export default function CTA() {
   return (
-    <section className="section-padding bg-blue-600">
+    <section className="section-sm bg-white">
       <div className="container-custom">
-        <div className="overflow-hidden rounded-[2rem] bg-gradient-to-r from-blue-700 via-blue-600 to-indigo-600 p-12 text-center shadow-2xl lg:p-20">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-100">
-            Ready to Transform Your Workforce?
-          </p>
+        <div className="relative overflow-hidden rounded-[24px] bg-[#2F80ED] px-8 py-10 lg:px-14 lg:py-12">
+          {/* Background Circles */}
+          <div className="absolute -right-20 -top-20 h-[460px] w-[460px] rounded-full border-[48px] border-white/5" />
+          <div className="absolute right-12 top-20 h-[300px] w-[300px] rounded-full border-[42px] border-white/5" />
+          <div className="absolute right-44 top-40 h-[160px] w-[160px] rounded-full border-[28px] border-white/5" />
 
-          <h2 className="mx-auto mt-5 max-w-4xl text-4xl font-extrabold leading-tight text-white lg:text-5xl">
-            Build Future-Ready Teams with
-            <span className="text-blue-200"> Enterprise Learning </span>
-            That Delivers Real Business Impact
-          </h2>
+          <div className="relative flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
+            {/* Left */}
+            <div className="flex items-start gap-6">
+              {/* Icon */}
+              <div className="flex h-20 w-20 shrink-0 items-center justify-center rounded-2xl bg-white shadow-md">
+                <Image
+                  src="/support icon.png"
+                  alt="Support"
+                  width={42}
+                  height={42}
+                  className="object-contain"
+                />
+              </div>
 
-          <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-blue-100">
-            Empower your workforce with industry-leading programs, expert
-            mentorship, measurable learning outcomes, and scalable enterprise
-            solutions tailored to your organization's goals.
-          </p>
+              {/* Content */}
+              <div className="max-w-2xl">
+                <h2 className="text-3xl font-bold leading-tight text-white lg:text-[34px]">
+                  Want to Learn More About Our Training Solutions?
+                </h2>
 
-          <div className="mt-10 flex flex-col items-center justify-center gap-5 sm:flex-row">
-            <Button className="bg-white text-blue-700 hover:bg-blue-50">
-              Book a Free Demo
-            </Button>
-
-            <Button
-              variant="secondary"
-              className="border-white bg-transparent text-white hover:bg-white hover:text-blue-700"
-            >
-              Explore Programs
-            </Button>
-          </div>
-
-          <div className="mt-14 grid gap-8 border-t border-white/20 pt-10 sm:grid-cols-3">
-            <div>
-              <h3 className="text-3xl font-bold text-white">500+</h3>
-              <p className="mt-2 text-blue-100">
-                Enterprise Partners
-              </p>
+                <p className="mt-3 text-lg leading-7 text-white/90">
+                  Get expert guidance and discover the right learning solution
+                  for your organization's growth.
+                </p>
+              </div>
             </div>
 
-            <div>
-              <h3 className="text-3xl font-bold text-white">1M+</h3>
-              <p className="mt-2 text-blue-100">
-                Professionals Trained
-              </p>
-            </div>
-
-            <div>
-              <h3 className="text-3xl font-bold text-white">95%</h3>
-              <p className="mt-2 text-blue-100">
-                Learning Completion
-              </p>
+            {/* Button */}
+            <div className="shrink-0">
+              <Button className="rounded-xl bg-white px-8 py-3.5 text-lg font-semibold text-[#2F80ED] shadow-md transition hover:bg-slate-100">
+                Contact Us
+                <span className="ml-2 text-xl">→</span>
+              </Button>
             </div>
           </div>
         </div>

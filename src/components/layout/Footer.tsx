@@ -1,84 +1,130 @@
-const footerLinks = {
-  Programs: [
-    "Data Science",
-    "Artificial Intelligence",
-    "Cloud Computing",
-    "Cyber Security",
-    "Software Development",
-  ],
-  Company: [
-    "About Us",
-    "Enterprise",
-    "Success Stories",
-    "Careers",
-    "Contact",
-  ],
-  Resources: [
-    "Blog",
-    "Case Studies",
-    "FAQs",
-    "Privacy Policy",
-    "Terms & Conditions",
-  ],
-};
+import Image from "next/image";
+import {
+  FaFacebookSquare,
+  FaInstagram,
+  FaLinkedin,
+  FaTwitter,
+  FaYoutube,
+} from "react-icons/fa";
+import Button from "../common/Button";
 
 export default function Footer() {
   return (
-    <footer className="bg-slate-950 text-gray-300">
-      <div className="container-custom py-20">
-        <div className="grid gap-14 lg:grid-cols-4">
-          {/* Brand */}
+    <footer className="border-t border-slate-200 bg-white">
+      <div className="container-custom pt-20 pb-8">
+        {/* Top */}
+        <div className="flex flex-col justify-between gap-12 lg:flex-row lg:items-center">
+          {/* Logo & Social */}
           <div>
-            <h2 className="text-3xl font-bold text-white">
-              Accredian
-            </h2>
+            <Image
+              src="/logo.png"
+              alt="Accredian"
+              width={190}
+              height={60}
+              priority
+            />
 
-            <p className="mt-6 leading-8 text-gray-400">
-              Empowering enterprises through world-class learning experiences,
-              measurable outcomes, and future-ready workforce development.
-            </p>
+            <div className="mt-6 flex items-center gap-4 text-[28px] text-slate-500">
+              <a href="#">
+                <FaFacebookSquare className="transition hover:text-blue-600" />
+              </a>
 
-            <div className="mt-8 flex gap-4">
-              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 transition hover:bg-blue-600">
-                🌐
-              </div>
+              <a href="#">
+                <FaLinkedin className="transition hover:text-blue-600" />
+              </a>
 
-              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 transition hover:bg-blue-600">
-                💼
-              </div>
+              <a href="#">
+                <FaTwitter className="transition hover:text-sky-500" />
+              </a>
 
-              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 transition hover:bg-blue-600">
-                📧
-              </div>
+              <a href="#">
+                <FaInstagram className="transition hover:text-pink-500" />
+              </a>
+
+              <a href="#">
+                <FaYoutube className="transition hover:text-red-500" />
+              </a>
             </div>
           </div>
 
-          {/* Footer Links */}
-          {Object.entries(footerLinks).map(([title, links]) => (
-            <div key={title}>
-              <h3 className="mb-6 text-xl font-semibold text-white">
-                {title}
-              </h3>
+          {/* CTA */}
+          <div className="flex flex-col items-start lg:items-end">
+            <Button className="rounded-xl px-8 py-3">
+              Enquire Now
+            </Button>
 
-              <ul className="space-y-4">
-                {links.map((link) => (
-                  <li key={link}>
-                    <a
-                      href="#"
-                      className="transition hover:text-white"
-                    >
-                      {link}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+            <p className="mt-3 text-base text-slate-600">
+              Speak with our Learning Advisor
+            </p>
+          </div>
         </div>
 
-        <div className="mt-16 border-t border-white/10 pt-8 text-center text-sm text-gray-500">
-          © {new Date().getFullYear()} Accredian Enterprise. All rights
-          reserved.
+        {/* Divider */}
+        <div className="my-12 border-t border-slate-200" />
+
+        {/* Links */}
+        <div className="grid gap-12 md:grid-cols-2">
+          {/* Company */}
+          <div>
+            <h3 className="mb-5 text-xl font-semibold text-slate-900">
+              Accredian
+            </h3>
+
+            <ul className="space-y-3 text-base text-slate-600">
+              <li>
+                <a href="#" className="transition hover:text-blue-600">
+                  About
+                </a>
+              </li>
+
+              <li>
+                <a href="#" className="transition hover:text-blue-600">
+                  Blog
+                </a>
+              </li>
+
+              <li>
+                <a href="#" className="transition hover:text-blue-600">
+                  Why Accredian
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Contact */}
+          <div>
+            <h3 className="mb-5 text-xl font-semibold text-slate-900">
+              Contact Us
+            </h3>
+
+            <div className="space-y-4 text-base leading-7 text-slate-600">
+              <p>
+                Email:{" "}
+                <a
+                  href="mailto:enterprise@accredian.com"
+                  className="font-medium text-blue-600 hover:underline"
+                >
+                  enterprise@accredian.com
+                </a>
+              </p>
+
+              <p>
+                4th Floor, 250, Phase IV,
+                <br />
+                Udyog Vihar, Sector 18,
+                <br />
+                Gurugram, Haryana
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Divider */}
+        <div className="mt-12 border-t border-slate-200 pt-6">
+          <p className="text-center text-sm text-slate-500">
+            © {new Date().getFullYear()} Accredian • A Brand of FullStack
+            Education Pvt. Ltd. All Rights Reserved.
+          </p>
         </div>
       </div>
     </footer>

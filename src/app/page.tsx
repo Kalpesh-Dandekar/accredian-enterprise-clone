@@ -10,8 +10,8 @@ import Domains from "@/components/sections/Domains";
 import SkillEnhancement from "@/components/sections/SkillEnhancement";
 import CatFramework from "@/components/sections/CatFramework";
 import Process from "@/components/sections/Process";
-import Testimonials from "@/components/sections/Testimonials";
 import FAQ from "@/components/sections/FAQ";
+import Testimonials from "@/components/sections/Testimonials";
 import CTA from "@/components/sections/CTA";
 
 export default function Home() {
@@ -37,9 +37,10 @@ export default function Home() {
 
       <Process />
 
-      <Testimonials />
-
+      {/* FAQ Before Testimonials */}
       <FAQ />
+
+      <Testimonials />
 
       <CTA />
 

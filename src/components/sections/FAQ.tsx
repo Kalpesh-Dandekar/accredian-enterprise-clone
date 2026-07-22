@@ -1,86 +1,115 @@
 "use client";
 
 import { useState } from "react";
+import { ChevronDown } from "lucide-react";
+import Button from "../common/Button";
+
+const categories = [
+  "About the Course",
+  "About the Delivery",
+  "Miscellaneous",
+];
 
 const faqs = [
   {
-    question: "How does Accredian help enterprises upskill employees?",
+    question:
+      "What types of corporate training programs does Accredian offer?",
     answer:
-      "Accredian offers industry-aligned learning programs, mentorship, certifications, analytics, and enterprise dashboards to help organizations continuously upskill their workforce.",
+      "Accredian provides enterprise learning solutions in Data Science, AI, Cloud Computing, Cyber Security, Software Development, Leadership, Product Management and many other high-demand domains.",
   },
   {
-    question: "Can learning paths be customized?",
+    question: "What domain specializations are available?",
     answer:
-      "Yes. Learning journeys can be tailored according to business objectives, employee roles, and organizational requirements.",
-  },
-  {
-    question: "Do employees receive certifications?",
-    answer:
-      "Yes. Learners receive industry-recognized certifications after successfully completing eligible programs.",
-  },
-  {
-    question: "How can organizations track learning progress?",
-    answer:
-      "Through enterprise dashboards with real-time insights, reports, completion rates, and engagement analytics.",
-  },
-  {
-    question: "Are live mentor sessions included?",
-    answer:
-      "Yes. Many enterprise programs include live mentor support, doubt-solving sessions, and project guidance.",
+      "Our enterprise programs cover a wide range of domains including AI, Data Analytics, Full Stack Development, Cloud, DevOps, Cyber Security, Management, and Business Leadership.",
   },
 ];
 
 export default function FAQ() {
-  const [openIndex, setOpenIndex] = useState<number>(0);
-
-  const toggleFAQ = (index: number) => {
-    setOpenIndex(openIndex === index ? -1 : index);
-  };
+  const [openIndex, setOpenIndex] = useState(0);
+  const [activeCategory, setActiveCategory] = useState(0);
 
   return (
-    <section className="section-padding bg-white">
-      <div className="container-custom max-w-4xl">
-        <div className="text-center">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600">
-            FAQ
-          </p>
+    <section className="section-sm bg-white">
+      <div className="container-custom">
+        {/* Heading */}
 
-          <h2 className="mt-4 text-4xl font-bold text-gray-900">
-            Frequently Asked Questions
+        <div className="mx-auto max-w-3xl text-center">
+          <h2 className="text-4xl font-bold text-slate-900 md:text-5xl">
+            Frequently Asked{" "}
+            <span className="text-blue-600">Questions</span>
           </h2>
 
-          <p className="mt-5 text-lg text-gray-600">
-            Everything you need to know about enterprise learning with
-            Accredian.
+          <p className="mt-4 text-lg text-slate-600">
+            Everything you need to know about our enterprise learning
+            solutions.
           </p>
         </div>
 
-        <div className="mt-16 space-y-5">
-          {faqs.map((faq, index) => (
-            <div
-              key={faq.question}
-              className="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm"
-            >
+        {/* Content */}
+
+        <div className="mt-16 grid gap-10 lg:grid-cols-[280px_1fr]">
+          {/* Categories */}
+
+          <div className="space-y-4">
+            {categories.map((category, index) => (
               <button
-                onClick={() => toggleFAQ(index)}
-                className="flex w-full items-center justify-between px-8 py-6 text-left transition hover:bg-gray-50"
+                key={category}
+                onClick={() => setActiveCategory(index)}
+                className={`w-full rounded-xl border px-6 py-5 text-left text-base font-semibold transition ${
+                  activeCategory === index
+                    ? "border-blue-600 bg-blue-600 text-white shadow-md"
+                    : "border-slate-200 bg-white text-slate-700 hover:border-blue-400"
+                }`}
               >
-                <span className="text-lg font-semibold text-gray-900">
-                  {faq.question}
-                </span>
-
-                <span className="text-2xl font-bold text-blue-600">
-                  {openIndex === index ? "−" : "+"}
-                </span>
+                {category}
               </button>
+            ))}
+          </div>
 
-              {openIndex === index && (
-                <div className="border-t border-gray-100 px-8 py-6">
-                  <p className="leading-8 text-gray-600">{faq.answer}</p>
-                </div>
-              )}
-            </div>
-          ))}
+          {/* FAQ */}
+
+          <div className="rounded-2xl border border-slate-200 bg-white">
+            {faqs.map((faq, index) => (
+              <div
+                key={faq.question}
+                className="border-b border-slate-200 last:border-b-0"
+              >
+                <button
+                  onClick={() =>
+                    setOpenIndex(openIndex === index ? -1 : index)
+                  }
+                  className="flex w-full items-center justify-between px-6 py-6 text-left"
+                >
+                  <span className="pr-6 text-lg font-semibold text-slate-900">
+                    {faq.question}
+                  </span>
+
+                  <ChevronDown
+                    size={22}
+                    className={`transition duration-300 ${
+                      openIndex === index ? "rotate-180" : ""
+                    }`}
+                  />
+                </button>
+
+                {openIndex === index && (
+                  <div className="px-6 pb-6">
+                    <p className="leading-7 text-slate-600">
+                      {faq.answer}
+                    </p>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* CTA */}
+
+        <div className="mt-14 flex justify-center">
+          <Button className="px-8 py-3.5">
+            Enquire Now
+          </Button>
         </div>
       </div>
     </section>

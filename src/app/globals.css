@@ -8,22 +8,18 @@
   --background: #ffffff;
   --foreground: #1f2937;
 
-  /* Brand Colors */
   --primary: #2563eb;
   --primary-dark: #1d4ed8;
   --secondary: #eff6ff;
 
-  /* Neutral Colors */
   --text-primary: #111827;
-  --text-secondary: #6b7280;
+  --text-secondary: #64748b;
 
   --border: #e5e7eb;
   --card: #ffffff;
 
-  /* Radius */
   --radius: 1rem;
 
-  /* Container */
   --container-width: 1280px;
 }
 
@@ -62,10 +58,6 @@ body {
   overflow-x: hidden;
 }
 
-/* =========================================
-   ELEMENTS
-========================================= */
-
 a {
   color: inherit;
   text-decoration: none;
@@ -82,31 +74,152 @@ img {
 }
 
 ::selection {
-  background: #2563eb;
-  color: #ffffff;
+  background: var(--primary);
+  color: #fff;
 }
 
 /* =========================================
-   REUSABLE UTILITIES
+   LAYOUT
 ========================================= */
 
 .container-custom {
-  width: 100%;
-  max-width: var(--container-width);
+  width: min(var(--container-width), calc(100% - 48px));
   margin-inline: auto;
-  padding-inline: 1.5rem;
 }
 
+/* =========================================
+   GLOBAL SECTION SPACING
+========================================= */
+
+.section-lg {
+  padding-block: 8rem;
+}
+
+.section-md {
+  padding-block: 6.5rem;
+}
+
+.section-sm {
+  padding-block: 4.5rem;
+}
+
+/* Backward compatibility */
 .section-padding {
-  padding-block: 5rem;
+  padding-block: 6.5rem;
+}
+
+/* =========================================
+   TYPOGRAPHY
+========================================= */
+
+.section-title {
+  font-size: clamp(2.3rem, 5vw, 3.6rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+  text-align: center;
+  color: #0f172a;
+}
+
+.section-subtitle {
+  max-width: 760px;
+  margin: 1.2rem auto 0;
+  text-align: center;
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+}
+
+/* =========================================
+   CARDS
+========================================= */
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  border-radius: 24px;
+  box-shadow:
+    0 20px 60px rgba(15, 23, 42, 0.08),
+    0 2px 8px rgba(15, 23, 42, 0.04);
+}
+
+.premium-card {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 24px;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 28px rgba(15, 23, 42, 0.06);
+}
+
+.premium-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.12);
+}
+
+/* =========================================
+   BACKGROUNDS
+========================================= */
+
+.gradient-section {
+  background:
+    radial-gradient(circle at top right,
+      rgba(37, 99, 235, 0.08),
+      transparent 35%),
+    radial-gradient(circle at bottom left,
+      rgba(79, 70, 229, 0.08),
+      transparent 35%),
+    #fff;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1024px) {
+  .section-lg {
+    padding-block: 6rem;
+  }
+
+  .section-md {
+    padding-block: 5rem;
+  }
+
+  .section-sm {
+    padding-block: 4rem;
+  }
+
+  .section-padding {
+    padding-block: 5rem;
+  }
 }
 
 @media (max-width: 768px) {
-  .section-padding {
-    padding-block: 3.5rem;
+  .container-custom {
+    width: calc(100% - 32px);
   }
 
-  .container-custom {
-    padding-inline: 1rem;
+  .section-lg {
+    padding-block: 5rem;
+  }
+
+  .section-md {
+    padding-block: 4rem;
+  }
+
+  .section-sm {
+    padding-block: 3rem;
+  }
+
+  .section-padding {
+    padding-block: 4rem;
+  }
+
+  .section-title {
+    font-size: 2.2rem;
+  }
+
+  .section-subtitle {
+    font-size: 1rem;
   }
 }

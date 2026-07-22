@@ -1,73 +1,62 @@
+import Image from "next/image";
+
 const testimonials = [
   {
-    name: "Sarah Johnson",
-    role: "Head of Learning",
-    company: "TechNova",
+    logo: "/companies/ADP logo.png",
+    company: "ADP",
     feedback:
-      "Accredian transformed the way our teams learn. The programs were practical, engaging, and directly aligned with our business goals.",
+      "We would like to thank Accredian for the wonderful support and the beautiful journey. The team turned our vision into reality with unparalleled dedication, service, and expertise throughout the entire process.",
   },
   {
-    name: "Rahul Sharma",
-    role: "Engineering Manager",
-    company: "CloudSync",
+    logo: "/companies/bayer logo.jpg",
+    company: "Bayer",
     feedback:
-      "The structured learning paths and expert mentorship significantly improved our team's technical capabilities within months.",
-  },
-  {
-    name: "Emily Davis",
-    role: "HR Director",
-    company: "FinEdge",
-    feedback:
-      "The analytics dashboard gave us clear visibility into employee progress and learning outcomes. It has become a key part of our L&D strategy.",
+      "Accredian's commitment to excellence is unmatched. They consistently go the extra mile to ensure our needs are met and exceeded, providing reliable support and high-quality service every step of the way.",
   },
 ];
 
 export default function Testimonials() {
   return (
-    <section className="section-padding bg-slate-50">
+    <section className="bg-white py-24 lg:py-32">
       <div className="container-custom">
+        {/* Heading */}
         <div className="text-center">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600">
-            Testimonials
-          </p>
-
-          <h2 className="mt-4 text-4xl font-bold text-gray-900">
-            Trusted by Enterprise Leaders
+          <h2 className="text-4xl font-bold text-slate-900 lg:text-5xl">
+            Testimonials from{" "}
+            <span className="text-blue-600">Our Partners</span>
           </h2>
 
-          <p className="mx-auto mt-5 max-w-3xl text-lg text-gray-600">
-            Hear what organizations say about their learning transformation
-            journey with Accredian.
+          <p className="mt-4 text-xl text-slate-600">
+            What <span className="text-blue-600">Our Clients</span> Are Saying
           </p>
         </div>
 
-        <div className="mt-16 grid gap-8 lg:grid-cols-3">
-          {testimonials.map((testimonial) => (
+        {/* Cards */}
+        <div className="mt-20 grid grid-cols-1 gap-8 lg:grid-cols-2">
+          {testimonials.map((item) => (
             <div
-              key={testimonial.name}
-              className="rounded-3xl border border-gray-200 bg-white p-8 shadow-sm transition duration-300 hover:-translate-y-2 hover:shadow-xl"
+              key={item.company}
+              className="rounded-[24px] border border-slate-200 bg-white p-12 transition-shadow duration-300 hover:shadow-lg"
             >
-              <div className="mb-6 text-5xl text-blue-600">❝</div>
+              <Image
+                src={item.logo}
+                alt={item.company}
+                width={80}
+                height={80}
+                className="h-16 w-auto object-contain"
+              />
 
-              <p className="leading-8 text-gray-600">
-                {testimonial.feedback}
+              <p className="mt-10 text-lg leading-9 text-slate-700">
+                "{item.feedback}"
               </p>
-
-              <div className="mt-8 border-t border-gray-100 pt-6">
-                <h3 className="text-lg font-bold text-gray-900">
-                  {testimonial.name}
-                </h3>
-
-                <p className="mt-1 text-sm text-gray-500">
-                  {testimonial.role}
-                </p>
-
-                <p className="text-sm font-semibold text-blue-600">
-                  {testimonial.company}
-                </p>
-              </div>
             </div>
           ))}
+        </div>
+
+        {/* Pagination Dots */}
+        <div className="mt-10 flex justify-center gap-3">
+          <span className="h-3 w-3 rounded-full bg-blue-600" />
+          <span className="h-3 w-3 rounded-full bg-slate-300" />
         </div>
       </div>
     </section>

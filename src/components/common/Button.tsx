@@ -16,13 +16,14 @@ export default function Button({
   type = "button",
 }: ButtonProps) {
   const baseStyles =
-    "inline-flex items-center justify-center rounded-lg px-6 py-3 text-sm font-semibold transition-all duration-300";
+    "group inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold tracking-[0.01em] transition-all duration-300 ease-out";
 
   const variants = {
     primary:
-      "bg-blue-600 text-white hover:bg-blue-700 shadow-md hover:shadow-lg",
+      "bg-gradient-to-r from-[#2563eb] to-[#1d4ed8] text-white border border-blue-600 shadow-[0_8px_20px_rgba(37,99,235,0.18)] hover:-translate-y-0.5 hover:shadow-[0_16px_32px_rgba(37,99,235,0.28)] active:translate-y-0",
+
     secondary:
-      "border border-gray-300 bg-white text-gray-900 hover:bg-gray-100",
+      "border border-slate-300 bg-white text-slate-800 hover:bg-slate-50 hover:border-slate-400",
   };
 
   return (
@@ -31,7 +32,24 @@ export default function Button({
       onClick={onClick}
       className={`${baseStyles} ${variants[variant]} ${className}`}
     >
-      {children}
+      <span>{children}</span>
+
+      {variant === "primary" && (
+        <svg
+          className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          strokeWidth={2}
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M5 12h14M13 5l7 7-7 7"
+          />
+        </svg>
+      )}
     </button>
   );
 }
