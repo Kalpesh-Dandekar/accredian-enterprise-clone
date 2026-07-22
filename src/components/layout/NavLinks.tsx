@@ -1,7 +1,8 @@
 const navLinks = [
   { label: "Programs", href: "#programs" },
-  { label: "Solutions", href: "#solutions" },
+  { label: "Domains", href: "#domains" },
   { label: "Why Accredian", href: "#why-accredian" },
+  { label: "CAT Framework", href: "#cat-framework" },
   { label: "Success Stories", href: "#testimonials" },
   { label: "FAQs", href: "#faq" },
 ] as const;
@@ -10,7 +11,7 @@ export default function NavLinks() {
   return (
     <nav
       aria-label="Primary Navigation"
-      className="hidden items-center gap-12 lg:flex"
+      className="hidden items-center gap-10 lg:flex"
     >
       {navLinks.map((link) => (
         <a

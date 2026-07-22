@@ -48,7 +48,7 @@ export default function CatFramework() {
   return (
     <section
       className="section-md bg-white"
-      id="framework"
+      id="cat-framework"
       aria-labelledby="framework-heading"
     >
       <div className="container-custom">

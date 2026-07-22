@@ -109,6 +109,7 @@ export default function Navbar() {
               )}
             </svg>
           </button>
+
         </div>
 
 
@@ -116,7 +117,7 @@ export default function Navbar() {
         <div
           id="mobile-navigation"
           className={`overflow-hidden transition-all duration-300 ease-in-out lg:hidden ${
-            isMenuOpen ? "max-h-[500px] pb-6" : "max-h-0"
+            isMenuOpen ? "max-h-[600px] pb-6" : "max-h-0"
           }`}
         >
           <nav
@@ -133,13 +134,15 @@ export default function Navbar() {
                 Programs
               </a>
 
+
               <a
-                href="#solutions"
+                href="#domains"
                 onClick={closeMenu}
                 className="font-medium text-slate-700 transition-colors hover:text-[#2563eb]"
               >
-                Solutions
+                Domains
               </a>
+
 
               <a
                 href="#why-accredian"
@@ -149,6 +152,16 @@ export default function Navbar() {
                 Why Accredian
               </a>
 
+
+              <a
+                href="#cat-framework"
+                onClick={closeMenu}
+                className="font-medium text-slate-700 transition-colors hover:text-[#2563eb]"
+              >
+                CAT Framework
+              </a>
+
+
               <a
                 href="#testimonials"
                 onClick={closeMenu}
@@ -156,6 +169,7 @@ export default function Navbar() {
               >
                 Success Stories
               </a>
+
 
               <a
                 href="#faq"
